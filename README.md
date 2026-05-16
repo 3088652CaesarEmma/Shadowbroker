@@ -9,6 +9,8 @@ A powerful trading bot and market analysis tool built with Python.
 
 Shadowbroker is a fork of [BigBodyCobain/Shadowbroker](https://github.com/BigBodyCobain/Shadowbroker), extended with additional features, improved reliability, and Docker support.
 
+> **Personal fork note:** I'm using this primarily for paper trading and learning purposes. Not running this with real funds.
+
 ## Features
 
 - Automated market analysis and trading signals
@@ -78,6 +80,8 @@ All configuration is handled via environment variables. Copy `.env.example` to `
 | `LOG_LEVEL` | Logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) | No |
 
 See `.env.example` for the full list of available options.
+
+> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing.
 
 ## Development
 

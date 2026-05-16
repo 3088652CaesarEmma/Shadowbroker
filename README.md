@@ -78,10 +78,11 @@ All configuration is handled via environment variables. Copy `.env.example` to `
 | `API_KEY` | Exchange API key | Yes |
 | `API_SECRET` | Exchange API secret | Yes |
 | `LOG_LEVEL` | Logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) | No |
+| `PAPER_TRADING` | Set to `true` to run in paper trading mode (no real orders) | No |
 
 See `.env.example` for the full list of available options.
 
-> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing.
+> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders.
 
 ## Development
 

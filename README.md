@@ -81,30 +81,14 @@ All configuration is handled via environment variables. Copy `.env.example` to `
 | `PAPER_TRADING` | Set to `true` to run in paper trading mode (no real orders) | No |
 | `DRY_RUN_NOTIFY` | Set to `true` to print a reminder on startup that paper trading is active | No |
 | `POLL_INTERVAL_SECONDS` | How often (in seconds) the bot checks for new signals (default: `60`) | No |
+| `MAX_SIGNAL_AGE_SECONDS` | Discard signals older than this many seconds before acting on them (default: `120`) | No |
 
 See `.env.example` for the full list of available options.
 
-> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders. I added `DRY_RUN_NOTIFY=true` for the same reason; it prints a visible reminder in the logs at startup so there's no ambiguity about which mode is active. I also set `POLL_INTERVAL_SECONDS=30` locally so signals feel more responsive while I'm actively watching — the upstream default of 60 is fine for unattended runs.
+> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders. I added `DRY_RUN_NOTIFY=true` for the same reason; it prints a visible reminder in the logs at startup so there's no ambiguity about which mode is active. I also set `POLL_INTERVAL_SECONDS=30` locally so signals feel more responsive while I'm actively watching — the upstream default of 60 is fine for unattended runs. I set `MAX_SIGNAL_AGE_SECONDS=60` locally to be more aggressive about dropping stale signals; the default of 120 felt too loose when I was stepping through runs manually.
 
 ## Development
 
 ### Pre-commit Hooks
 
-This project uses [pre-commit](https://pre-commit.com/) for code quality checks.
-
-```bash
-pip install pre-commit
-pre-commit install
-```
-
-### Running Tests
-
-```bash
-pytest tests/
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feat/my-feature`)
-3. Commit your changes following [Conventional Comm
+This project uses [pre-commit](https://pre-commit.com/) for code qua

@@ -79,10 +79,11 @@ All configuration is handled via environment variables. Copy `.env.example` to `
 | `API_SECRET` | Exchange API secret | Yes |
 | `LOG_LEVEL` | Logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) | No |
 | `PAPER_TRADING` | Set to `true` to run in paper trading mode (no real orders) | No |
+| `DRY_RUN_NOTIFY` | Set to `true` to print a reminder on startup that paper trading is active | No |
 
 See `.env.example` for the full list of available options.
 
-> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders.
+> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders. I added `DRY_RUN_NOTIFY=true` for the same reason; it prints a visible reminder in the logs at startup so there's no ambiguity about which mode is active.
 
 ## Development
 

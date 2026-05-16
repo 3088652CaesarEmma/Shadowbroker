@@ -80,10 +80,11 @@ All configuration is handled via environment variables. Copy `.env.example` to `
 | `LOG_LEVEL` | Logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) | No |
 | `PAPER_TRADING` | Set to `true` to run in paper trading mode (no real orders) | No |
 | `DRY_RUN_NOTIFY` | Set to `true` to print a reminder on startup that paper trading is active | No |
+| `POLL_INTERVAL_SECONDS` | How often (in seconds) the bot checks for new signals (default: `60`) | No |
 
 See `.env.example` for the full list of available options.
 
-> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders. I added `DRY_RUN_NOTIFY=true` for the same reason; it prints a visible reminder in the logs at startup so there's no ambiguity about which mode is active.
+> **Tip:** I default `LOG_LEVEL` to `DEBUG` locally so I can follow along with what the bot is doing. I also always keep `PAPER_TRADING=true` — easy safeguard against accidentally placing real orders. I added `DRY_RUN_NOTIFY=true` for the same reason; it prints a visible reminder in the logs at startup so there's no ambiguity about which mode is active. I also set `POLL_INTERVAL_SECONDS=30` locally so signals feel more responsive while I'm actively watching — the upstream default of 60 is fine for unattended runs.
 
 ## Development
 
@@ -106,9 +107,4 @@ pytest tests/
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feat/my-feature`)
-3. Commit your changes following [Conventional Commits](https://www.conventionalcommits.org/)
-4. Push and open a Pull Request
-
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+3. Commit your changes following [Conventional Comm
